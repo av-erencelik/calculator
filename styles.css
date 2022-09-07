@@ -38,6 +38,9 @@ body::before {
     background-color: #90B77D;
     border-radius: 4px;
     margin-bottom: 15px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
 }
 .buttons {
     display: grid;
@@ -88,4 +91,13 @@ body::before {
 }
 .btn:active {
     background-color: #8d6060;
+}
+#currentOperation {
+    margin-top: auto;
+    margin-right: 10px;
+    font-size: 50px;
+}
+#lastOperation{
+    margin-right: 10px;
+    margin-top: 25px;
 }
