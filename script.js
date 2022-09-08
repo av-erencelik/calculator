@@ -22,6 +22,7 @@ operatorButtons.forEach((button) =>
     button.addEventListener("click", () => addOperator(button.textContent))
 );
 equalButton.addEventListener("click", equals)
+window.addEventListener("keydown",keyboardInput)
 
 
 
@@ -115,6 +116,16 @@ function operate(a,b,c) {
         default : 
             return null
     }
+}
+
+function keyboardInput (e) {
+    if (e.key >= 0 && e.key <= 9) addNumber(e.key)
+    if (e.key === '.') addPoint()
+    if (e.key === '=' || e.key === 'Enter') equals()
+    if (e.key === 'Backspace') deleteNumber()
+    if (e.key === 'Escape') clear()
+    if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/')
+        addOperator(e.key)
 }
 
 
