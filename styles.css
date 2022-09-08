@@ -7,7 +7,7 @@ body {
     box-sizing: border-box;
 }
 body::before {
-    background-image: url(/table-background.jpg); 
+    background-image: url(table-background.jpg); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
