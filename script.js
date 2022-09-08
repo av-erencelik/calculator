@@ -88,6 +88,10 @@ function addOperator(a) {
         firstNumber = currentOperationScreen.textContent
     }
     if (firstNumber != "" && secondNumber != "" && operator != null) {
+        if (secondNumber == "0") {
+            alert("You can't divide by 0 :(")
+            return
+        }
         firstNumber = operate(firstNumber,secondNumber,operator)
         secondNumber = ""
         currentOperationScreen.textContent = firstNumber
