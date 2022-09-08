@@ -37,6 +37,10 @@ function equals() {
     if(firstNumber != "" && operator != null && refreshScreen==false) {
         secondNumber = currentOperationScreen.textContent
     }else return
+    if (secondNumber == 0 && operator == "÷") {
+        alert("You can't divide by 0 :(")
+        return
+    }
     let result = operate(firstNumber,secondNumber,operator)
     refreshScreen = true
     lastOperationScreen.textContent = `${firstNumber} ${operator} ${secondNumber} = `
@@ -123,14 +127,19 @@ function operate(a,b,c) {
 function add(a,b) {
     a = parseFloat(a)
     b = parseFloat(b)
-    return a + b
+    let result = a + b
+    return Number(result.toFixed(3))
 }
 function substract(a,b) {
-    return a - b
+    let result = a - b
+    return Number(result.toFixed(3))
 }
 function multiply(a,b) {
-    return a * b
+    let result = a * b
+    return Number(result.toFixed(3))
 }
+
 function divide(a,b) {
-    return a / b
+    let result = a / b
+    return Number(result.toFixed(3))
 }
